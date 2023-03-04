@@ -22,6 +22,16 @@ app.post('/', (req, res) => {
     //cluster.Worker.kill(); 
 });
 
+app.get('/authe/signin', (req, res) => {
+    console.log(req.body, new Date());
+    for (let i = 0; i < 1e8; i++) { 
+
+    }
+    console.log(new Date());
+    res.send({code: 200, pid: process.pid})
+    //cluster.Worker.kill(); 
+});
+
 if (cluster.isMaster) {
     console.log({numCpu});
     for (let i = 0; i < numCpu; i++) {
